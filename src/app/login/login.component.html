@@ -1,0 +1,7 @@
+<p routerLink="login">Effettua il Login per accedere</p>
+
+<form (submit)="login()">
+    <input [(ngModel)]="email" type="text" placeholder="Email" name="email" required>
+    <input [(ngModel)]="password" type="text" placeholder="password" name="password" required>
+    <button (click)="login()" type="submit" mat-raised-button color="warn">Accedi</button>
+</form>

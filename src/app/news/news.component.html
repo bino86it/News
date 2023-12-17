@@ -1,0 +1,18 @@
+<p routerLink="news"></p>
+
+
+<input type="text" name="ricerca" id="cerca" placeholder="Search" [(ngModel)]="ricerca">
+<button type="submit" mat-raised-button color="warn">Cerca</button>
+
+<div *ngIf="authService.isAuthenticated()">
+    <h2>News</h2>
+    <ul>
+      <li *ngFor="let item of news">{{ item.title }}</li>
+    </ul>
+  </div>
+  <div *ngIf="!authService.isAuthenticated()">
+    <p>You must log in to view the news.</p>
+  </div>
+  <div *ngIf="newsError">
+    <p>An error occurred while retrieving the news.</p>
+  </div>
